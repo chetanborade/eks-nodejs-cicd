@@ -14,20 +14,19 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: 725506140458.dkr.ecr.ap-south-1.amazonaws.com/nodejs-demo:latest
-        imagePullPolicy: Always
+        image: 725506140458.dkr.ecr.ap-south-1.amazonaws.com/nodejs-demo:IMAGE_TAG
         ports:
         - containerPort: 3000
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-service
 spec:
+  type: LoadBalancer
   selector:
     app: nodejs
-  type: LoadBalancer
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 3000
+    - port: 80
+      targetPort: 3000
