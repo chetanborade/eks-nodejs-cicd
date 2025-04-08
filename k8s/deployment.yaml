@@ -17,3 +17,4 @@ spec:
           image: 725506140458.dkr.ecr.ap-south-1.amazonaws.com/nodejs-demo:IMAGE_TAG
           ports:
             - containerPort: 3000
+          imagePullPolicy: Always
