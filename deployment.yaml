@@ -15,6 +15,7 @@ spec:
       containers:
       - name: nodejs
         image: 725506140458.dkr.ecr.ap-south-1.amazonaws.com/nodejs-demo:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
 ---
